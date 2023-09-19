@@ -230,3 +230,27 @@ mlb_df = read_excel('DATA/mlb11.xlsx')
 pulse_df = 
   read_sas('DATA/public_pulse_data.sas7bdat')
 ```
+
+#### exporting data
+
+imagine we already cleaned the data
+
+``` r
+litters_df = 
+  read_csv("DATA/FAS_litters.csv")
+```
+
+    ## Rows: 49 Columns: 8
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (2): Group, Litter Number
+    ## dbl (6): GD0 weight, GD18 weight, GD of Birth, Pups born alive, Pups dead @ ...
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+``` r
+litters_df_cleaned = 
+  janitor::clean_names(litters_df)
+write_csv(litters_df_cleaned, "DATA/litters_cleaned.csv")
+```
