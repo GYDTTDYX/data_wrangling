@@ -2,7 +2,7 @@
 title: "data_wrangling"
 author: "Yuxuan Du"
 date: "2023-09-19"
-output: html_document
+output: github_document
 ---
 
 ## Data wrangling
