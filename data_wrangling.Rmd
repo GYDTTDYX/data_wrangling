@@ -4,10 +4,26 @@ author: "Yuxuan Du"
 date: "2023-09-19"
 output: github_document
 ---
-
+```{r}
+library(tidyverse)
+```
 ## Data wrangling
 
+### import datasets
+import 'FAS_litters.csv' using relative path
+```{r, warning=FALSE}
+litters_df = 
+  read_csv("DATA/FAS_litters.csv")
+litters_df = 
+  janitor::clean_names(litters_df)
+litters_df
+```
 
+import 'FAS_litters.csv' using absolute path
+```{r, warning=FALSE}
+litters_df_abs = 
+  read_csv('/Users/daviddu/Desktop/P8105_DS/0919lec/data_wrangling/DATA/FAS_litters.csv')
+litters_df_abs = 
+  janitor::clean_names(litters_df_abs)
 
-```{r}
 ```
